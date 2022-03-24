@@ -1,7 +1,7 @@
-﻿<!--
-AMANUEl REDA
-ASSIGNMENT 5
-SUBMISSION DATE 05 / 10 / 2019
+<!--
+    AMANUEl REDA
+    ASSIGNMENT 5
+    SUBMISSION DATE 05 / 10 / 2019
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -39,11 +39,20 @@ SUBMISSION DATE 05 / 10 / 2019
             padding: 3px;
         }
 
+        .rectangle {
+            height: 285px
+        }
 
+        .picture {
+            height: 215px;
+        }
+
+        .square {
+            height: 192px;
+        }
 
         img {
             width: 100%;
-            height: 192px;
         }
 
         form > input {
@@ -111,28 +120,7 @@ SUBMISSION DATE 05 / 10 / 2019
             var i;
             var swap = document.getElementById("btnChangeOrder");
             swap.addEventListener("click", random_Image, false);
-            createImageTiles();
-
-        }
-        function createImageTiles() {
-            var divC;
-            let images;
-            for (i = 1; i < 7; i++) {
-                divC = document.createElement("div");
-                divC.setAttribute('id', i);
-                divC.setAttribute('class', 'column');
-                document.getElementById("out").appendChild(divC);
-                k = 3 * i;
-
-                for (j = k - 3; j < k; j++) {
-
-                    images = document.createElement('img');
-                    images.setAttribute('src', 'Image' + j + ".jpg")
-                    images.setAttribute('id', 'Image' + j);
-                    images.setAttribute('class', 'column');
-                    document.getElementById(i).appendChild(images)
-                }
-            }
+            
         }
 
         //set the attributes of the image element retrived
@@ -144,14 +132,12 @@ SUBMISSION DATE 05 / 10 / 2019
             var rnum_container = [];
             while (rnum_container.length < 18) {
                 var randNum = Math.floor(Math.random() * 18);
-                if (rnum_container.indexOf(randNum) == -1) ) {
+                if (rnum_container.indexOf(randNum) == -1) {
                     rnum_container.push(randNum);
-             
                 }
             }
             for (i = 0; i <= 17; i++) {
-
-                images[i] = document.getElementById("Image" + i);
+                images[i] = document.getElementById("image" + i);
                 images[i].setAttribute("src", "Image" + rnum_container[i] + ".jpg");
                 images[i].setAttribute("alt", "image" + rnum_container[i]);
                 x = Math.random() * 100 + 100;
@@ -166,18 +152,47 @@ SUBMISSION DATE 05 / 10 / 2019
 </head>
 <body>
     <header class="header">
-        A06 Responsive FlexBox Layout
+        Responsive FlexBox Layout
         <form action="#">
             <input id="btnChangeOrder" type="button" value="Swap" />
         </form>
     </header>
 
-    <section class="main_section">
+    <section id="1" class="main_section">
 
-        <div id="out" class="row">
-
+        <div class="row">
+            <div id="1" style="Order:1;" class="column">
+                <img id="image0" class="picture" src="Image0.jpg" alt="Image1" />
+                <img id="image1" class="rectangle" src="Image1.jpg" alt="rect1" />
+                <img id="image2" class="square" src="Image2.jpg" alt="box1" />
+            </div>
+            <div id="2" style="Order:2;" class="column">
+                <img id="image3" class="rectangle" src="Image3.jpg" alt="rect2" />
+                <img id="image4" class="picture" src="Image4.jpg" alt="Image2" />
+                <img id="image5" class="square" src="Image5.jpg" alt="box4" />
+            </div>
+            <div id="3" style="Order:3;" class="column">
+                <img id="image6" class="square" src="Image6.jpg" alt="box3" />
+                <img id="image7" class="rectangle" src="Image7.jpg" alt="rect3" />
+                <img id="image8" class="picture" src="Image8.jpg" alt="Image3" />
+            </div>
+            <div id="4" style="Order:4;" class="column">
+                <img id="image9" class="rectangle" src="Image9.jpg" alt="rect4" />
+                <img id="image10" class="picture" src="Image10.jpg" alt="Image4" />
+                <img id="image11" class="square" src="Image11.jpg" alt="box2" />
+            </div>
+            <div id="5" style="Order:5;" class="column">
+                <img id="image12" class="picture" src="Image12.jpg" alt="rect5" />
+                <img id="image13" class="rectangle" src="Image13.jpg" alt="Image5" />
+                <img id="image14" class="square" src="Image14.jpg" alt="box5" />
+            </div>
+            <div id="6" style="Order:6;" class="column">
+                <img id="image15" class="rectangle" src="Image15.jpg" alt="rect6" />
+                <img id="image16" class="square" src="Image16.jpg" alt="Ibox6" />
+                <img id="image17" class="picture" src="Image17.jpg" alt="Image6" />
+            </div>
         </div>
     </section>
-    <footer class="footer">CS 80 Internet Programing &copy; 2019</footer>
+    <footer class="footer">AMANUEl REDA &copy; 2019</footer>
 </body>
 </html>
